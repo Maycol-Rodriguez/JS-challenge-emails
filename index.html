@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="/style/normalize.css" />
+    <link rel="stylesheet" href="/style/custom.css" />
+    <title>App Mensajeria</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <main class="contenedor-email">
+        <p class="titulo">Enviar nuevo email</p>
+        <form action="/" class="formulario">
+          <div class="entradas">
+            <label class="etiquetas" for="/">Para:</label>
+            <input class="input" type="email" />
+
+            <label class="etiquetas" for="/">Asunto:</label>
+            <input class="input" type="text" />
+
+            <label class="etiquetas" for="/">Mensaje:</label>
+            <input class="input input-largo" type="text" />
+          </div>
+          <div class="botones">
+            <div class="logo logo-enviar">
+              <input class="boton boton-enviar" type="submit" value="Enviar" />
+              <img src="assets/icons/enviar.png" alt="enviar">
+            </div>
+            <div class="logo logo-reset">
+              <input class="boton boton-reset" type="submit" value="Resetear" />
+              <img src="assets/icons/eliminar.png" alt="eliminar">
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
