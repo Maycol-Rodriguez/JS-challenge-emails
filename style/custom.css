@@ -141,13 +141,13 @@ body {
 
 @media (max-width: 1280px) {
   .contenedor-email {
-    width: 800px;
+    width: 80rem;
   }
 }
 
 @media (max-width: 768px) {
   .contenedor-email {
-    width: 500px;
+    width: 50rem;
   }
   .botones{
     height: 3.5rem;
