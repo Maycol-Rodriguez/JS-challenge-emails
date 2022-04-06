@@ -20,24 +20,19 @@
         <form action="/" class="formulario">
           <div class="entradas">
             <label class="etiquetas" for="/">Para:</label>
-            <input class="input" type="email" />
+            <input class="input input-email" type="email" />
 
             <label class="etiquetas" for="/">Asunto:</label>
-            <input class="input" type="text" />
+            <input class="input input-asunto" type="text" />
 
             <label class="etiquetas" for="/">Mensaje:</label>
-            <input class="input input-largo" type="text" />
+            <input class="input input-area input-mensaje" type="text" />
           </div>
           <div class="botones">
-            <div class="logo logo-enviar">
-              <input class="boton boton-enviar" type="submit" value="Enviar" />
-              <img src="assets/icons/enviar.png" alt="enviar">
-            </div>
-            <div class="logo logo-reset">
-              <input class="boton boton-reset" type="submit" value="Resetear" />
-              <img src="assets/icons/eliminar.png" alt="eliminar">
-            </div>
+            <input class="boton boton-enviar" type="submit" value="Enviar" disabled/>
+            <input class="boton boton-reset" type="submit" value="Resetear" disabled/>
           </div>
+          <footer class='agregar'></footer>
         </form>
       </main>
     </div>
