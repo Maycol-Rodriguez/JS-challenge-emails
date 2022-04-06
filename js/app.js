@@ -1,8 +1,10 @@
 const btnEnviar = document.querySelector(".boton-enviar");
+const btnReset = document.querySelector(".boton-reset");
 const email = document.querySelector(".input-email");
 const asunto = document.querySelector(".input-asunto");
 const mensaje = document.querySelector(".input-mensaje");
 const formulario = document.querySelector(".formulario");
+const ubicacion = document.querySelector(".agregar");
 const exRE =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -12,6 +14,8 @@ function eventos() {
   email.addEventListener("blur", validarFormulario);
   asunto.addEventListener("blur", validarFormulario);
   mensaje.addEventListener("blur", validarFormulario);
+  btnReset.addEventListener("click", resetFormulario);
+  formulario.addEventListener('submit', enviarEmail)
 }
 
 //* Funciones
@@ -60,7 +64,9 @@ function validarFormulario(evt) {
   ) {
     btnEnviar.disabled = false;
     btnEnviar.classList.remove("cursor", "opacidad");
+    btnEnviar.classList.add("hover");
   }
+  
 }
 
 // todo: Imprimir mensajes en el HTML
@@ -72,6 +78,34 @@ function mostrarError(mensaje) {
   const errores = document.querySelectorAll(".error-msj");
   console.log(errores);
   if (errores.length === 0) {
-    formulario.insertBefore(mensajeError, document.querySelector(".agregar"));
+    ubicacion.appendChild(mensajeError);
   }
+}
+
+//todo: Envio de email
+function enviarEmail(evt) {
+  evt.preventDefault();
+
+  const spinner = document.querySelector("#spinner");
+  spinner.style.display = "inline-block";
+  
+  setTimeout(() => {
+    spinner.style.display = "none";
+    const texto = document.createElement('p');
+    texto.textContent = 'Email enviado correctamente';
+    texto.classList.add('texto');
+    formulario.insertBefore(texto, spinner);
+
+    setTimeout(() => {
+      texto.remove();
+      resetFormulario();
+    }, 4000);
+
+  }, 3000);
+}
+
+//todo: resetear formulario
+function resetFormulario() {
+  formulario.reset();
+  iniciarApp();
 }
